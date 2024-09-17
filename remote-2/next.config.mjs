@@ -7,15 +7,13 @@ const nextConfig = {
     const { isServer } = options;
     config.plugins.push(
       new NextFederationPlugin({
-        name: "host",
+        name: "remote2",
         filename: "static/chunks/remoteEntry.js",
-        remotes: {
-          remote: `remote@http://localhost:3001/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
-          remote2: `remote2@http://localhost:3003/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
+        exposes: {
+          "./ComponentC": "./src/components/ComponentC.tsx",
+        },
+        shared: {
+          // Shared dependencies between the Host and Remote applications
         },
       })
     );

@@ -16,6 +16,11 @@ const ComponentB = dynamic(() => import("remote/ComponentB"), {
   ssr: false,
 }) as React.ComponentType<{ total: number; handleTotal: () => void }>;
 
+// eslint-disable-next-line
+const ComponentC = dynamic(() => import("remote2/ComponentC"), {
+  ssr: false,
+});
+
 export default function RemoteComponent() {
   const [total, setTotal] = useState<number>(0);
 
@@ -25,6 +30,7 @@ export default function RemoteComponent() {
     <>
       <ComponentA auth={{ token: "123", name: "Raian" }} />
       <ComponentB total={total} handleTotal={handleTotal} />
+      <ComponentC />
     </>
   );
 }
