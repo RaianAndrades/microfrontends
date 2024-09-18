@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-export const Context = createContext({ email: "pele@email.com" });
+export const Context = createContext({ email: "john@email.com" });
 
 interface ComponentAProps {
   auth: {

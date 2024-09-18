@@ -28,7 +28,7 @@ export default function RemoteComponent() {
 
   return (
     <>
-      <ComponentA auth={{ token: "123", name: "Raian" }} />
+      <ComponentA auth={{ token: "123", name: "John" }} />
       <ComponentB total={total} handleTotal={handleTotal} />
       <ComponentC />
     </>
